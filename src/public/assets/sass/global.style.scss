@@ -68,6 +68,11 @@ body{
                                 @include flex($justify:center, $align: center);
                                 background: $reseda-green;
                                 padding: 1rem;
+                                display: block;
+
+                                &.hide{
+                                    display: none;
+                                }
                             }
                         }
                     }

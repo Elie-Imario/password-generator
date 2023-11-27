@@ -14,9 +14,30 @@ document.querySelector('.btn').addEventListener('click', async () => {
         enableSymbol
     }
 
-    PostRequest(PasswordSpecification).then((res) => {
-        document.getElementById('GP').innerHTML = res.data;
-    })
+    if(passLength > 0){
+        PostRequest(PasswordSpecification).then((res) => {
+            document.getElementById('GP').innerHTML = res.data
+        })
+    }
+})
+
+document.querySelector('.ico').addEventListener("click", () => {
+    const passToCopy = document.getElementById("GP").innerText
+    if(passToCopy.length > 0){
+        navigator.clipboard.writeText(passToCopy)
+        .then(() => {
+            const clipboardBtn = document.querySelector('.fa-clipboard')
+            const clipboardCheck = document.querySelector('.fa-clipboard-check')
+            clipboardBtn.classList.add('hide')
+            clipboardCheck.classList.remove('hide')
+            setTimeout(()=>{
+                clipboardBtn.classList.remove('hide')
+                clipboardCheck.classList.add('hide')
+            },1500)
+        })
+        .catch((error) => console.log(error));
+    
+    }
 })
 
 const PostRequest = async(formData)=>{
