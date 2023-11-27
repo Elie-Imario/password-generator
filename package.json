@@ -1,5 +1,5 @@
 {
-  "name": "app-skeleton",
+  "name": "password-generator",
   "version": "0.0.1",
   "description": "",
   "author": "",
@@ -8,6 +8,7 @@
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "css-watch": "sass src/public/assets/sass/global.style.scss src/public/assets/css/styles.min.css --style=compressed --watch",
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",

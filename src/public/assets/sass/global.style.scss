@@ -1,0 +1,113 @@
+@import './fonts';
+@import './variable';
+@import './mixins';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    background-color: $african-violet;
+
+    .app{
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        left: 0%;
+        transform: translate(0, -50%);
+        .bloc-container{
+            background: $reseda-green;
+            width: 50%;
+            margin: 0 auto;
+            padding: 5%;
+    
+            .form-container{
+                background: $purple-100;
+                width: 70%;
+                height: 100%;
+                margin: 0 auto;
+                padding: 1.5rem;
+            }
+    
+            .form-container .title-lead{
+                text-align: center;
+                padding: .75rem;
+                span{
+                    font-size: 25px;
+                    color: $white;
+                    font-family: $PlusJakartaSansSemiBold;
+                    text-transform: capitalize;
+                }
+            }
+    
+            .form-container .form-body{
+                @include flex($justify:center, $direction: column, $gap: 15px);
+                .form-group{
+                    width: 100%;
+                    @include flex($justify:space-between, $align: center);
+    
+                    &.bg-dark{
+                        width: 100%;
+                        background: $dark-purple;
+                        padding: .25rem;
+                        span{
+                            font-size: 18px;
+                            color: $white;
+                            font-family: $PlusJakartaSansRegular;
+                            &.generated-pass{
+                                padding: 0 .5rem;
+                            }
+                        }
+    
+                        .ico{
+                            cursor: pointer;
+                            i{
+                                @include flex($justify:center, $align: center);
+                                background: $reseda-green;
+                                padding: 1rem;
+                            }
+                        }
+                    }
+    
+                    label{
+                        color: $white;
+                        font-family: $PlusJakartaSansRegular;
+                        font-size: 16px;
+                    }
+    
+                    .form-control{
+                        padding: .5rem;
+                        height: 35px;
+                        max-width: 80px;
+                        width: 100%;
+                        font-family: $PlusJakartaSansRegular;
+                        &:focus{
+                            border: none;
+                            outline: none;
+                        }
+                    }
+    
+                }
+    
+                .btn-group{
+                    width: 100%;
+                    .btn{
+                        padding: .75rem;
+                        width: 100%;
+                        cursor: pointer;
+                        font-family: $PlusJakartaSansRegular;
+                        color: $white;
+                        font-size: 16px;
+                        background: $reseda-green;
+                        border: none;
+                    }
+    
+                }
+            }
+        }
+    }
+}
+
