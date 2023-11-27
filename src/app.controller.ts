@@ -1,5 +1,6 @@
-import { Controller, Get, Render } from '@nestjs/common';
+import { Body, Controller, Get, Post, Render } from '@nestjs/common';
 import { AppService } from './app.service';
+import { PassSpec } from './dataTypes';
 
 @Controller()
 export class AppController {
@@ -8,4 +9,9 @@ export class AppController {
   @Get('/index')
   @Render('index')
   getIndexView() {}
+
+  @Post('/generatePassword')
+  generatePassword(@Body() passSpec: PassSpec): string {
+    return JSON.stringify({ data: this.appService.generatePass(passSpec) });
+  }
 }
